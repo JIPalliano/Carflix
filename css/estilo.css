@@ -1,0 +1,521 @@
+@charset 'utf-8';
+
+/* --1-- elementos base
+    --2-- main topo
+     --3-- main corpo
+      --4-- modal
+        --5-- main final  */
+
+
+
+
+:root{
+    --vermelho:rgb(255, 2, 40);
+    --preta:rgba(27, 27, 27, 0.904);
+}
+
+/* elementos base */
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    border: none;
+    outline: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background: rgb(17, 17, 17);
+    color:white;
+}
+
+/* main topo */
+
+#logo{
+    margin-left: 30px;
+    position: absolute;
+    color: var(--vermelho);
+    font-size: 50px;
+    width: 100px;
+    font-family: Lobster;
+    font-style: italic;
+    text-shadow: 0.1em 0.1em 0.05em var(--preta);
+}
+
+.logo-name{
+    height: 100px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+.logo-carro{
+    height: 100px;
+    width: 100px;
+    margin-left: 10px;
+    margin-top: 2px;
+}
+
+
+header a{
+    margin-right: 10px;
+}
+
+.letra-menu{
+    color:#AAA;
+    margin-right:10px;
+}
+
+li{
+    font-family: Lobster;
+}
+
+header nav li:hover{
+    color:#fff;
+}
+
+#topo{
+    position: fixed;
+    z-index: 1000;
+    width:100%;
+    height: 50px;
+    float: left;
+    background-color: var(--preta);
+}
+
+#btn-menu {
+    width: 50px;
+    height: 50px;
+    background-color: var(--vermelho);
+    border-radius: 10px;
+    float: right;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+#menu {
+    float:left;
+    width: 100%;
+    height: 0%;
+    background-color: var(--vermelho);
+    position: fixed;
+    overflow: hidden;
+}
+
+#menu:target {
+    height: 100%;
+}
+
+#btn-fechar {
+    float: right;
+    padding: 30px;
+    margin-top: -6px;
+    font-weight: bold;
+}
+
+#menu ul {
+    width: 100%;
+    height: 100%;
+    clear: both;
+    text-align: center;
+}
+
+#menu ul li {
+    padding: 3%;
+}
+
+
+
+@media screen and (min-width:400px){
+    #btn-menu {
+        margin-top: 0.1px;
+    }
+    .box{
+        width: 10%;
+        height: 10%;
+    }
+
+}
+
+@media screen and (min-width:768px){
+    #btn-menu,#btn-fechar {
+        display: none;
+    }
+    #menu {
+        width: 60%;
+        height: 50px;
+        background-color: var(--preto);
+        position: absolute;
+        right: 0;
+    }
+    #menu ul {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    #menu ul li {
+        padding: 0%;
+        color: #AAA;
+        font-size: 1.2em;
+    }
+    #menu li:hover{
+        color:#fff;
+    }
+
+}
+
+@media screen and (min-width:1024px){
+    #menu {
+        width: 40%;
+        height: 50px;
+    }
+    #menu ul li {
+        font-size: 1.0em;
+    }
+
+
+}
+
+
+
+.carro-principal{
+    font-size:16px;
+    background: linear-gradient(rgba(0,0,0,0.80),rgba(0,0,0,0.80)100%),  url('../img/carro-p1.jpg');
+    height: 70vh;
+    width: 100%;
+    background-size: cover ;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.carro-principal .descricao{
+    margin-bottom: 40px;
+    margin-top: 40px;
+    text-align:justify;
+    transition: 1.20s;
+    line-height: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#mais{
+    display: none;
+}
+
+.carro-principal .titulo{
+    font-size: 100px;
+    margin-top:15px;
+    font-family: Bebas Neue;
+
+}
+
+.titulo{
+    text-shadow: 5px 4px 1px rgba(63, 79, 92, 0.904);
+}
+
+
+
+.botao{
+    background-color:rgba(0,0,0,0.50) ;
+    border:none;
+    color:white;
+    padding:15px 30px;
+    margin-right: 15px;
+    font-size: 12px;
+    cursor:pointer;
+    transition: .5s ease all;
+}
+
+.botao-2{
+    background-color:rgba(0,0,0,0.50) ;
+    border:none;
+    color:white;
+    padding:15px 30px;
+    margin-right: 15px;
+    font-size: 12px;
+    cursor:pointer;
+    transition: .5s ease all;
+}
+.botao-2:hover{
+    background-color: var(--vermelho);
+    color: black;
+}
+
+.botao-2 i{
+    margin-right: 8px;
+}
+
+.botao:hover{
+    background-color: var(--vermelho);
+    color: black;
+}
+
+.botao i{
+    margin-right: 8px;
+}
+
+.container{
+    margin-left: 30px;
+}
+
+.carro-principal .container{
+    width: 60%;
+}
+
+/* main corpo */
+
+.container-carousel{
+    width: 100%;
+    height: 50vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+}
+
+.box{
+    width: 600px;
+    height: 400px;
+    border-radius: 10px;
+    box-shadow: 5px 4px 1px rgba(250, 14, 14, 0.5);
+}
+
+
+.modelo{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    stop-opacity: unset;
+}
+
+#destaque{
+    font-family: Russo One;
+    margin-top: 20px;
+    margin-left: 20px;
+    color: white;
+    text-shadow: 0.1em 0.01em 0.06em var(--vermelho);
+}
+
+
+#nacionais{
+    font-family: Russo One;
+    margin-top: 20px;
+    margin-left: 20px;
+    color: white;
+    text-shadow: 0.1em 0.01em 0.06em var(--vermelho);
+}
+
+#luxo{
+    font-family: Russo One;
+    margin-top: 20px;
+    margin-left: 20px;
+    color: white;
+    text-shadow: 0.1em 0.01em 0.06em var(--vermelho);
+}
+
+.modelo:hover{
+    transform: scale(1.02);
+    transition: 2s;
+}
+
+/* modal */
+
+.modal-container{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background:rgba(0,0,0,0.5);
+    top: 0px;
+    left: 0px;
+    z-index: 2000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-container.mostrar{
+    display: flex;
+}
+
+.modal{
+    background: var(--preta);
+    width:60%;
+    min-width: 300px;
+    padding: 40px;
+    border: 10px solid var(--vermelho);
+    box-shadow: 0 0 0 10px var(--preta);
+    position:relative; 
+}
+iframe{
+    width: 100%;
+}
+
+@keyframes modal{
+    from{
+        opacity: 0;
+        transform: translate3d(-60px, 0, 0);
+    }
+    to{
+        opacity: 1;
+        transform: translate3d(0,0,0);
+    }
+}
+
+.mostrar .modal{
+    animation: modal .3s;
+}
+
+.fechar{
+    position: absolute;
+    font-size: 1.2em;
+    top: -30px;
+    right: -30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 4px solid var(--vermelho);
+    background: var(--preta);
+    cursor:pointer;
+    box-shadow: 0 4px 4px 0 rgba(0,0,0,0.3);
+}
+
+
+/* formulario */
+
+.tela{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+.cadastro{
+    background: var(--vermelho);
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row-reverse;
+}
+
+.cad{
+    height: 100%;
+    padding: 40px;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    border-radius: 20px;
+}
+
+form {
+    background-color: rgba(0,0,0,0.2);
+    width: 100%;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: 32px auto;
+    padding: 32px 64px;
+    display: flex;
+    flex-direction: column;
+}
+
+form legend {
+    color: var(--preta);
+    margin-bottom: 32px;
+}
+
+div.input {
+    background-color: rgba(0,0,0,0.3);
+    margin-bottom: 24px;
+    border-radius: 8px;
+    position: relative;
+}
+
+input,
+.botao-3 {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    padding: 16px 0;
+    border:none;
+    border-bottom: 1px solid var(--preta);
+    background-color: transparent;
+    outline: none;
+    color: var(--preta);
+    font-size: 1em;
+
+}
+
+legend{
+    font-family: Bebas Neue;
+    font-size:30px;
+}
+
+
+input ~ label {
+    position: absolute;
+    top: 16px;
+    left: 0;
+    color: var(--preta) ;
+    transition: .4s;
+}
+
+label{
+    font-family: Lobster;
+}
+
+input:focus ~ label,
+input:valid ~ label {
+    transform: translateY(-29px);
+    font-size: 0.8em;
+    letter-spacing: 0.1em;
+}
+
+
+.input span.error {
+    display: flex;
+    padding: 0;
+    background-color: rgba(255, 0, 0, 0.2);
+}
+
+.input span.error.active {
+    border: 1px solid red;
+    padding: 0.4em;
+}
+
+/* final da main */
+
+.container-3{
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.redes{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.modelo-2{
+    width: 50px;
+    margin: 10px ;
+}
+
+.modelo-2:hover{
+    transform: rotatey(180deg);
+    transition: 2s;
+}
+
